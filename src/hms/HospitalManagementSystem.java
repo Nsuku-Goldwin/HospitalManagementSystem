@@ -1,11 +1,11 @@
 package hms;
+import java.sql.*;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -84,20 +84,28 @@ public class HospitalManagementSystem extends JFrame{
         add(mainPnl);
     }
     private void buttons(){
-        //when login button is clicked a necessary object must be called containing the home page
+        //when login button is clicked the login() method is called to verify user login
         loginBtn.addActionListener((e) -> {
             login();
         });
+        //clear user input
         clearBtn.addActionListener((e) -> {
             employeeIdTxtFld.setText("");
             passwordTxtFld.setText("");
         });
+        //
         exitBtn.addActionListener((e) -> {
             System.exit(0);
         });
     }
+    //This method is called to verify login details and create the proper object to open the homepage of the application
     private void login(){
-        
+        String url = "jdbc:derby://localhost:1527/HospitalManagementSystem", user = "Nsuku", password = "Nsuku";
+        try {
+            Connection con = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
 }
