@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -37,6 +38,7 @@ public class HospitalManagementSystem extends JFrame{
         setTitle("Hospital Management System");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         initializeElements();
+        buttons();
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
@@ -80,6 +82,22 @@ public class HospitalManagementSystem extends JFrame{
         mainPnl.add(loginDetailsPnl, BorderLayout.CENTER);
         mainPnl.add(buttonsPnl, BorderLayout.SOUTH);
         add(mainPnl);
+    }
+    private void buttons(){
+        //when login button is clicked a necessary object must be called containing the home page
+        loginBtn.addActionListener((e) -> {
+            login();
+        });
+        clearBtn.addActionListener((e) -> {
+            employeeIdTxtFld.setText("");
+            passwordTxtFld.setText("");
+        });
+        exitBtn.addActionListener((e) -> {
+            System.exit(0);
+        });
+    }
+    private void login(){
+        
     }
     
 }
