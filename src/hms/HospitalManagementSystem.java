@@ -1,5 +1,5 @@
 package hms;
-import java.sql.*;
+//Import packages
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -9,6 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 public class HospitalManagementSystem extends JFrame{
     //Jpanels
     private JPanel mainPnl;
@@ -86,7 +91,7 @@ public class HospitalManagementSystem extends JFrame{
     private void buttons(){
         //when login button is clicked the login() method is called to verify user login
         loginBtn.addActionListener((e) -> {
-            login();
+            new loginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText());
         });
         //clear user input
         clearBtn.addActionListener((e) -> {
@@ -98,7 +103,5 @@ public class HospitalManagementSystem extends JFrame{
             System.exit(0);
         });
     }
-    //This method is called to verify login details and create the proper object to open the homepage of the application
-    private void login(){
-    }
+    
 }
