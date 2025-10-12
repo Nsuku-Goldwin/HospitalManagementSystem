@@ -100,12 +100,5 @@ public class HospitalManagementSystem extends JFrame{
     }
     //This method is called to verify login details and create the proper object to open the homepage of the application
     private void login(){
-        String url = "jdbc:derby://localhost:1527/HospitalManagementSystem", user = "Nsuku", password = "Nsuku";
-        try {
-            Connection con = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
