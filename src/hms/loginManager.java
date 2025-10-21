@@ -17,7 +17,7 @@ public class loginManager {
 //            System.out.println("Helo");
         try{
             Connection connection = DriverManager.getConnection(url, user, pass);
-            String sql = "SELECT employee_id, password FROM login_info WHERE employee_id = ?";
+            String sql = "SELECT employee_id, password, job_title FROM employees WHERE employee_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1,employeeID);
             ResultSet rs = ps.executeQuery();

@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class AdministratorGUI extends JFrame{
+    //Main tab to contain all the pages/tabs that are requred for the administrator page and functionality
     private JTabbedPane mainTab;
     //initLogsPage Elements declaration
     private JPanel logsMainPnl;
@@ -35,17 +36,18 @@ public class AdministratorGUI extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
+    //Logs opanel to add to the mainTab
     private void initLogsPage(){
         logsMainPnl = new JPanel(new BorderLayout());
         logsBtnsPnl = new JPanel();
         logsTxtArea = new JTextArea(50,100);
         logsTxtArea.setEditable(false);
         logsEmployeeIdTxtFld = new JTextField(20);
-        logsDateCombo = new JComboBox<String>(new String[]{"1", "2", "3", "4", "5","6","7", "8", "9", "10", "11","12", "13", "14", "15", "16","17","18", "19", "20", "21", "22","23", "24", "25", "26", "27","28","29", "30", "31"});
+        logsDateCombo = new JComboBox<String>(new String[]{"Date","1", "2", "3", "4", "5","6","7", "8", "9", "10", "11","12", "13", "14", "15", "16","17","18", "19", "20", "21", "22","23", "24", "25", "26", "27","28","29", "30", "31"});
         logsDateCombo.setPreferredSize(new Dimension(100,25));
-        logsMonthCombo = new JComboBox<String>(new String[]{"January", "February", "March", "April","May", "June", "July", "August","September", "October", "November", "December"});
+        logsMonthCombo = new JComboBox<String>(new String[]{"Month","January", "February", "March", "April","May", "June", "July", "August","September", "October", "November", "December"});
         logsMonthCombo.setPreferredSize(new Dimension(100,25));
-        logsYearCombo = new JComboBox<String>(new String[]{"2025"});
+        logsYearCombo = new JComboBox<String>(new String[]{"Year","2025"});
         logsYearCombo.setPreferredSize(new Dimension(100,25));
         logsFilterBtn = new JButton("Filter");
         logsRefreshBtn = new JButton("Refresh");
@@ -61,4 +63,9 @@ public class AdministratorGUI extends JFrame{
         logsMainPnl.add(logsBtnsPnl, BorderLayout.SOUTH);
         
     }
+    //TO-Do add code for LogsPage Logic
+    //Add Employee panel to add to the mainTab
+    JPanel addEmployeeMainPnl;
+    private void addEmployeePage(){}
+    //TO-Do add code for addEmployeePage Logic
 }
