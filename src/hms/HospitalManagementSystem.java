@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 public class HospitalManagementSystem extends JFrame{
@@ -63,7 +64,7 @@ public class HospitalManagementSystem extends JFrame{
         passwordLbl = new JLabel("Password:   ");
         //Text fields
         employeeIdTxtFld = new JTextField(50);
-        passwordTxtFld = new JTextField(50);
+        passwordTxtFld = new JPasswordField(50);
         //Buttons
         loginBtn = new JButton("Login");
         clearBtn = new JButton("Clear");
