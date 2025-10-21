@@ -1,7 +1,7 @@
-Mon Oct 20 12:08:56 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
+Tue Oct 21 13:05:04 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Oct 20 12:08:57 SAST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019a-0117-eda6-ffff9cfe998f 
+Tue Oct 21 13:05:04 SAST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019a-0671-ab62-ffff9cfe998f 
 on database directory C:\Users\Goldwin\Documents\GitHub\HospitalManagementSystem\Database\HospitalManagementSystem with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
 Loaded from file:/C:/Program%20Files/Java/jdk-25/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Azul Systems, Inc.
@@ -12,5 +12,3 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\Goldwin\Documents\GitHub\HospitalManagementSystem\Database
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Oct 20 13:02:42 SAST 2025: Shutting down Derby engine

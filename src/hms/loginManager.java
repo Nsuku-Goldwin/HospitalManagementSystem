@@ -9,9 +9,10 @@ import javax.swing.JOptionPane;
 import objcts.Logs;
 
 public class loginManager {
-    
+    private boolean bool = false;
     //This method is called to verify login details and create the proper object to open the homepage of the application
     public loginManager(String employeeID, String enteredPassword){
+        
         String url = "jdbc:derby://localhost:1527/HospitalManagementSystem", user = "Nsuku", pass = "Nsuku";
 //            System.out.println("Helo");
         try{
@@ -26,6 +27,8 @@ public class loginManager {
                     String description = "User succesfully logged in to the system";
                     new Logs().addToLogs(employeeID, description, "Succesful");
                     System.out.println("successful");
+                    bool = true;
+                    
                 }
                 else{
                     String description = "User tried to login but failed due to incorect password";
@@ -41,5 +44,11 @@ public class loginManager {
         }catch(SQLException e){
             e.printStackTrace();
         }
+        
     }
+
+    public boolean isBool() {
+        return bool;
+    }
+    
 }

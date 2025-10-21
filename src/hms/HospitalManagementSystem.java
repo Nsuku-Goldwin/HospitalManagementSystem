@@ -1,11 +1,13 @@
 package hms;
 //Import packages
+import hms.gui.admin.AdministratorGUI;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -83,10 +85,16 @@ public class HospitalManagementSystem extends JFrame{
         mainPnl.add(buttonsPnl, BorderLayout.SOUTH);
         add(mainPnl);
     }
+    //Add funtionality to all trhe buttons of the login page
     private void buttons(){
         //when login button is clicked the login() method is called to verify user login
         loginBtn.addActionListener((e) -> {
-            new loginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText());
+            boolean bool = new loginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText()).isBool();
+            if(bool){
+                setVisible(false);
+                AdministratorGUI administrator = new AdministratorGUI();
+            }
+            
         });
         //clear user input
         clearBtn.addActionListener((e) -> {
