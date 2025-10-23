@@ -1,4 +1,5 @@
 package hms.gui.admin;
+import hms.logic.admin.AdminLogic;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -6,7 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -17,13 +20,16 @@ public class AdministratorGUI extends JFrame{
     //initLogsPage Elements declaration
     private JPanel logsMainPnl;
     private JPanel logsBtnsPnl;
-    private JTextArea logsTxtArea;
+    private JScrollPane logsTableScroll;
+    private JTable logsTable;
     private JTextField logsEmployeeIdTxtFld;
     private JComboBox logsDateCombo;
     private JComboBox logsMonthCombo;
     private JComboBox logsYearCombo;
     private JButton logsFilterBtn;
     private JButton logsRefreshBtn;
+    //Table Column names
+    private final Object[] columnNames = {"Empoyee ID","Name", "Surname", "Date", "Time", "Description", "Status"};
     public AdministratorGUI() {
         setTitle("Administrator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,14 +40,16 @@ public class AdministratorGUI extends JFrame{
         add(mainTab);
         pack();
         setLocationRelativeTo(null);
+        buttons();
         setVisible(true);
     }
     //Logs opanel to add to the mainTab
     private void initLogsPage(){
+        
         logsMainPnl = new JPanel(new BorderLayout());
         logsBtnsPnl = new JPanel();
-        logsTxtArea = new JTextArea(50,100);
-        logsTxtArea.setEditable(false);
+        logsTable = new JTable(new AdminLogic().viewAllLogs(), columnNames);
+        logsTableScroll = new JScrollPane(logsTable);
         logsEmployeeIdTxtFld = new JTextField(20);
         logsDateCombo = new JComboBox<String>(new String[]{"Date","1", "2", "3", "4", "5","6","7", "8", "9", "10", "11","12", "13", "14", "15", "16","17","18", "19", "20", "21", "22","23", "24", "25", "26", "27","28","29", "30", "31"});
         logsDateCombo.setPreferredSize(new Dimension(100,25));
@@ -59,11 +67,20 @@ public class AdministratorGUI extends JFrame{
         logsBtnsPnl.add(logsYearCombo);
         logsBtnsPnl.add(logsFilterBtn);
         logsBtnsPnl.add(logsRefreshBtn);
-        logsMainPnl.add(logsTxtArea, BorderLayout.CENTER);
+        logsMainPnl.add(logsTableScroll, BorderLayout.CENTER);
         logsMainPnl.add(logsBtnsPnl, BorderLayout.SOUTH);
         
     }
     //TO-Do add code for LogsPage Logic
+    public void buttons(){
+        logsFilterBtn.addActionListener((e) -> {
+            
+        });
+        logsRefreshBtn.addActionListener((e)->{
+            logsTable = new JTable(new AdminLogic().viewAllLogs(), this.columnNames);
+            System.out.println("Data refreshed");
+        });
+    }
     //Add Employee panel to add to the mainTab
     JPanel addEmployeeMainPnl;
     private void addEmployeePage(){}
