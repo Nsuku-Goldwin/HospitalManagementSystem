@@ -25,7 +25,7 @@ public class AdminLogic {
             l.date, l.time, l.description, l.status
             FROM logs l
             JOIN employees e ON l.employee_id = e.employee_id
-            ORDER BY l.date, l.time
+            ORDER BY l.date DESC, l.time DESC
             """;
 
         try (PreparedStatement ps = connection.prepareStatement(sql);
