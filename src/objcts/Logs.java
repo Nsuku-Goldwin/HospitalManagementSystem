@@ -1,6 +1,6 @@
 package objcts;
+import hms.logic.DatabaseConnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Date;
@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Logs {
+    private Connection connection;
     public Logs() {
+        connection = new DatabaseConnection().getConnetion();
     }
     public void addToLogs(String employeeID, String description, String status){
         String url = "jdbc:derby://localhost:1527/HospitalManagementSystem", user = "Nsuku", password = "Nsuku";
@@ -17,7 +19,6 @@ public class Logs {
         Date date = Date.valueOf(LocalDate.now());
         Time time = Time.valueOf(LocalTime.now());
         try {
-            Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1,employeeID);
             ps.setDate(2, date);

@@ -1,7 +1,7 @@
 package hms;
 
+import hms.logic.DatabaseConnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,13 +10,12 @@ import objcts.Logs;
 
 public class loginManager {
     private boolean bool = false;
+    private Connection connection;
     //This method is called to verify login details and create the proper object to open the homepage of the application
     public loginManager(String employeeID, String enteredPassword){
-        
-        String url = "jdbc:derby://localhost:1527/HospitalManagementSystem", user = "Nsuku", pass = "Nsuku";
-//            System.out.println("Helo");
+                   
         try{
-            Connection connection = DriverManager.getConnection(url, user, pass);
+            connection = new DatabaseConnection().getConnetion();
             String sql = "SELECT employee_id, password, job_title FROM employees WHERE employee_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1,employeeID);
