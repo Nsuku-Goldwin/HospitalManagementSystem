@@ -6,11 +6,11 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -36,7 +36,10 @@ public class AdministratorGUI extends JFrame{
         mainTab = new JTabbedPane();
         mainTab.setBorder(new EmptyBorder(20, 20, 20, 20));
         initLogsPage();
+        addEmployeePage();
+        //Add Tabs Here
         mainTab.add("Logs",logsMainPnl);
+        mainTab.add("Add",addEmployeeMainPnl);
         add(mainTab);
         pack();
         setLocationRelativeTo(null);
@@ -78,11 +81,13 @@ public class AdministratorGUI extends JFrame{
         });
         logsRefreshBtn.addActionListener((e)->{
             logsTable = new JTable(new AdminLogic().viewAllLogs(), this.columnNames);
-            System.out.println("Data refreshed");
         });
     }
     //Add Employee panel to add to the mainTab
     JPanel addEmployeeMainPnl;
-    private void addEmployeePage(){}
+    private void addEmployeePage(){
+        addEmployeeMainPnl = new JPanel();
+        addEmployeeMainPnl.add(new JLabel("Hello"));
+    }
     //TO-Do add code for addEmployeePage Logic
 }
