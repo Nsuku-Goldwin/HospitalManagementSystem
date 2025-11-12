@@ -54,7 +54,7 @@ public class HospitalManagementSystem extends JFrame{
         
         employeeIdPnl  = new JPanel(new FlowLayout());
         passwordPnl  = new JPanel(new FlowLayout());
-        loginDetailsPnl  = new JPanel(new GridLayout(2,1));
+        loginDetailsPnl  = new JPanel(new BorderLayout());
         buttonsPnl  = new JPanel(new FlowLayout());
         //labels
         welcomeLbl = new JLabel("Welcome to HMS");
