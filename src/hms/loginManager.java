@@ -8,12 +8,12 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import objcts.Logs;
 
-public class loginManager {
+public class LoginManager {
     private boolean bool = false;
     private String jobTitle = "";
     private Connection connection;
     //This method is called to verify login details and create the proper object to open the homepage of the application
-    public loginManager(String employeeID, String enteredPassword){
+    public LoginManager(String employeeID, String enteredPassword){
                    
         try{
             connection = new DatabaseConnection().getConnetion();
@@ -45,10 +45,10 @@ public class loginManager {
         
     }
 
-    public boolean isBool() {
+    public boolean isTrue() {
         return bool;
     }
-    public String jobTitle(){
+    public String getJobTitle() {
         return jobTitle;
     }
     

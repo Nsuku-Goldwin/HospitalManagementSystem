@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -82,10 +83,20 @@ public class HospitalManagementSystem extends JFrame{
     private void buttons(){
         //when login button is clicked the login() method is called to verify user login
         loginBtn.addActionListener((e) -> {
-            boolean bool = new loginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText()).isBool();
-            if(bool){
+            LoginManager loginResults = new LoginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText());
+            if(loginResults.isTrue()){
                 setVisible(false);
-                AdministratorGUI administrator = new AdministratorGUI();
+                String jobTitle = loginResults.getJobTitle();
+                //Load application based on job title
+                switch(jobTitle){
+                    case "Administrator":
+                        AdministratorGUI administrator = new AdministratorGUI();
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null,"Something went wrong!","Error",JOptionPane.ERROR_MESSAGE);
+                        System.exit(0);
+                        break;
+                }
             }
             
         });

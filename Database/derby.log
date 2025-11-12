@@ -62,3 +62,5 @@ ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authen
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Wed Nov 12 20:00:11 SAST 2025 Thread[#29,DRDAConnThread_2,5,main] (DATABASE = HospitalManagementSystem), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
+----------------------------------------------------------------
+Wed Nov 12 21:02:25 SAST 2025: Shutting down Derby engine
