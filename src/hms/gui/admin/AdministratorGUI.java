@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.swing.border.EmptyBorder;
 
 public class AdministratorGUI extends JFrame{
@@ -22,7 +23,6 @@ public class AdministratorGUI extends JFrame{
     private JPanel logsBtnsPnl;
     private JScrollPane logsTableScroll;
     private JTable logsTable;
-    private JTextField logsEmployeeIdTxtFld;
     private JComboBox logsDateCombo;
     private JComboBox logsMonthCombo;
     private JComboBox logsYearCombo;
@@ -30,6 +30,7 @@ public class AdministratorGUI extends JFrame{
     private JButton logsRefreshBtn;
     //Table Column names
     private final Object[] columnNames = {"Empoyee ID","Name", "Surname", "Date", "Time", "Description", "Status"};
+    //Constructor Method
     public AdministratorGUI() {
         setTitle("Administrator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,7 +44,6 @@ public class AdministratorGUI extends JFrame{
         add(mainTab);
         pack();
         setLocationRelativeTo(null);
-        buttons();
         setVisible(true);
     }
     //Logs opanel to add to the mainTab
@@ -53,9 +53,8 @@ public class AdministratorGUI extends JFrame{
         logsBtnsPnl = new JPanel();
         logsTable = new JTable(new AdminLogic().viewAllLogs(), columnNames);
         logsTableScroll = new JScrollPane(logsTable);
-        logsEmployeeIdTxtFld = new JTextField(20);
         logsDateCombo = new JComboBox<String>(new String[]{"Date","1", "2", "3", "4", "5","6","7", "8", "9", "10", "11","12", "13", "14", "15", "16","17","18", "19", "20", "21", "22","23", "24", "25", "26", "27","28","29", "30", "31"});
-        logsDateCombo.setPreferredSize(new Dimension(100,25));
+        logsDateCombo.setPreferredSize(new Dimension(100,20));
         logsMonthCombo = new JComboBox<String>(new String[]{"Month","January", "February", "March", "April","May", "June", "July", "August","September", "October", "November", "December"});
         logsMonthCombo.setPreferredSize(new Dimension(100,25));
         logsYearCombo = new JComboBox<String>(new String[]{"Year","2025"});
@@ -64,20 +63,18 @@ public class AdministratorGUI extends JFrame{
         logsRefreshBtn = new JButton("Refresh");
         
         logsBtnsPnl.setLayout(new FlowLayout(FlowLayout.LEFT));
-        logsBtnsPnl.add(logsEmployeeIdTxtFld);
         logsBtnsPnl.add(logsDateCombo);
         logsBtnsPnl.add(logsMonthCombo);
         logsBtnsPnl.add(logsYearCombo);
         logsBtnsPnl.add(logsFilterBtn);
         logsBtnsPnl.add(logsRefreshBtn);
+        JLabel temp = new JLabel("");
+        temp.setPreferredSize(new Dimension(400, 20));
+        logsBtnsPnl.add(temp);
         logsMainPnl.add(logsTableScroll, BorderLayout.CENTER);
         logsMainPnl.add(logsBtnsPnl, BorderLayout.SOUTH);
-        
-    }
-    //TO-Do add code for LogsPage Logic
-    public void buttons(){
+        //Add Button functionality
         logsFilterBtn.addActionListener((e) -> {
-            
         });
         logsRefreshBtn.addActionListener((e)->{
             logsTable = new JTable(new AdminLogic().viewAllLogs(), this.columnNames);
