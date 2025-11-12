@@ -1,8 +1,8 @@
-Thu Oct 30 14:58:32 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
+Tue Nov 11 14:11:32 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Thu Oct 30 14:58:32 SAST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019a-3532-ca04-00007ca5ad28 
-on database directory C:\Users\Nsuku\Documents\HMS\Database\HospitalManagementSystem with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
+Tue Nov 11 14:11:32 SAST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019a-72d4-10d8-ffff9f498b6f 
+on database directory D:\HMS\Database\HospitalManagementSystem with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
 Loaded from file:/C:/Program%20Files/Apache%20NetBeans/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Azul Systems, Inc.
 java.runtime.version=24.0.2+12
@@ -10,5 +10,11 @@ user.dir=C:\Program Files\Apache NetBeans\db-derby-10.17.1.0-bin
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\Nsuku\Documents\HMS\Database
+derby.system.home=D:\HMS\Database
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Nov 11 14:30:25 SAST 2025: Shutting down Derby engine
+----------------------------------------------------------------
+Tue Nov 11 14:30:25 SAST 2025:
+Shutting down instance a816c00e-019a-72d4-10d8-ffff9f498b6f on database directory D:\HMS\Database\HospitalManagementSystem with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
+----------------------------------------------------------------

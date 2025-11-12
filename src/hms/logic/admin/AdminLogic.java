@@ -2,19 +2,13 @@ package hms.logic.admin;
 
 import java.sql.*;
 import java.util.*;
+import hms.logic.DatabaseConnection;
 
 public class AdminLogic {
     private Connection connection;
 
-    public AdminLogic() {
-        try {
-            String url = "jdbc:derby://localhost:1527/HospitalManagementSystem";
-            String user = "Nsuku";
-            String password = "Nsuku";
-            connection = DriverManager.getConnection(url, user, password);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public AdminLogic() {    
+        connection = new DatabaseConnection().getConnetion();
     }
     //Call this method when AdministratorGui is initiated
     public Object[][] viewAllLogs() {

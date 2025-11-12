@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/HMS/src/hms/gui/admin/AdministratorGUI.java</file>
+            <file>file:/D:/HMS/src/hms/logic/admin/AdminLogic.java</file>
+            <file>file:/D:/HMS/src/hms/HospitalManagementSystem.java</file>
+            <file>file:/D:/HMS/src/hms/loginManager.java</file>
             <file>file:/D:/HMS/src/objcts/Logs.java</file>
+            <file>file:/D:/HMS/src/objcts/Employee.java</file>
         </group>
     </open-files>
 </project-private>
