@@ -10,6 +10,7 @@ import objcts.Logs;
 
 public class loginManager {
     private boolean bool = false;
+    private String jobTitle = "";
     private Connection connection;
     //This method is called to verify login details and create the proper object to open the homepage of the application
     public loginManager(String employeeID, String enteredPassword){
@@ -25,16 +26,14 @@ public class loginManager {
                 if(password.equals(enteredPassword)){
                     String description = "User succesfully logged in to the system";
                     new Logs().addToLogs(employeeID, description, "Succesful");
-                    System.out.println("successful");
                     bool = true;
-                    
+                    jobTitle = rs.getString("job_title");
                 }
                 else{
                     String description = "User tried to login but failed due to incorect password";
                     new Logs().addToLogs(employeeID, description, "Unsuccesful");
                     JOptionPane.showMessageDialog(null, "Incorect Login Details");
                 }
-                
             }
             else{
                 JOptionPane.showMessageDialog(null, "You do not have access to this system");
@@ -48,6 +47,9 @@ public class loginManager {
 
     public boolean isBool() {
         return bool;
+    }
+    public String jobTitle(){
+        return jobTitle;
     }
     
 }

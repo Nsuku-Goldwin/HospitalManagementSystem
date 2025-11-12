@@ -3,7 +3,6 @@ package hms;
 import hms.gui.admin.AdministratorGUI;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,12 +29,6 @@ public class HospitalManagementSystem extends JFrame{
     private JButton loginBtn;
     private JButton clearBtn;
     private JButton exitBtn;
-    
-    
-    //Main method for testing
-    public static void main(String[] args) {
-        new HospitalManagementSystem();
-    }
     public HospitalManagementSystem(){
         setTitle("Hospital Management System");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
