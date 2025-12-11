@@ -3,6 +3,8 @@ package hms;
 import hms.gui.admin.AdministratorGUI;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-public class HospitalManagementSystem extends JFrame{
+public class HospitalManagementSystem extends JFrame implements KeyListener{
     //Jpanels
     private JPanel mainPnl;
     private JPanel welcomePnl;
@@ -35,15 +37,19 @@ public class HospitalManagementSystem extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         initializeElements();
         buttons();
+        
+        addKeyListener(this);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+        setFocusable(true);
     }
     //Initialize and add all elements to main Panel
     private void initializeElements(){
         //Jpanels
         mainPnl = new JPanel(new BorderLayout());
         mainPnl.setBorder(new EmptyBorder(20, 20, 20, 20));
+        mainPnl.addKeyListener(this);
         welcomePnl = new JPanel(new FlowLayout());
         
         employeeIdPnl  = new JPanel(new FlowLayout());
@@ -57,7 +63,9 @@ public class HospitalManagementSystem extends JFrame{
         passwordLbl = new JLabel("Password:   ");
         //Text fields
         employeeIdTxtFld = new JTextField(50);
+        employeeIdTxtFld.addKeyListener(this);
         passwordTxtFld = new JPasswordField(50);
+        passwordTxtFld.addKeyListener(this);
         //Buttons
         loginBtn = new JButton("Login");
         clearBtn = new JButton("Clear");
@@ -83,22 +91,8 @@ public class HospitalManagementSystem extends JFrame{
     private void buttons(){
         //when login button is clicked the login() method is called to verify user login
         loginBtn.addActionListener((e) -> {
-            LoginManager loginResults = new LoginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText());
-            if(loginResults.isTrue()){
-                setVisible(false);
-                String jobTitle = loginResults.getJobTitle();
-                //Load application based on job title
-                switch(jobTitle){
-                    case "Administrator":
-                        AdministratorGUI administrator = new AdministratorGUI();
-                        break;
-                    default:
-                        JOptionPane.showMessageDialog(null,"Something went wrong!","Error",JOptionPane.ERROR_MESSAGE);
-                        System.exit(0);
-                        break;
-                }
-            }
-            
+            loginButton();
+              
         });
         //clear user input
         clearBtn.addActionListener((e) -> {
@@ -110,5 +104,39 @@ public class HospitalManagementSystem extends JFrame{
             System.exit(0);
         });
     }
-    
+    private void loginButton(){
+        LoginManager loginResults = new LoginManager(employeeIdTxtFld.getText(),passwordTxtFld.getText());
+        if(loginResults.isTrue()){
+            setVisible(false);
+            String jobTitle = loginResults.getJobTitle();
+            //Load application based on job title
+            switch(jobTitle){
+                case "Administrator":
+                    AdministratorGUI administrator = new AdministratorGUI();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Something went wrong!","Error",JOptionPane.ERROR_MESSAGE);
+                    System.exit(0);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {}
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch(e.getKeyCode()){
+                
+            case 10:loginButton();break;
+            case 27:System.exit(0);break;
+        }
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        
+    }
 }

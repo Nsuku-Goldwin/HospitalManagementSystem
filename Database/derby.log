@@ -1,7 +1,7 @@
-Wed Nov 12 19:59:56 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
+Thu Dec 11 17:34:59 SAST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Wed Nov 12 20:00:11 SAST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019a-7939-67fc-ffff9f498b6f 
+Thu Dec 11 17:34:59 SAST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019b-0e0d-1cde-ffff9f498b6f 
 on database directory D:\HMS\Database\HospitalManagementSystem with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
 Loaded from file:/C:/Program%20Files/Apache%20NetBeans/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Azul Systems, Inc.
@@ -12,55 +12,5 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=D:\HMS\Database
 Database Class Loader started - derby.database.classpath=''
-Wed Nov 12 20:00:11 SAST 2025 Thread[#29,DRDAConnThread_2,5,main] (XID = 1888), (SESSIONID = 0), (DATABASE = HospitalManagementSystem), (DRDAID = {1}), Cleanup action starting
-java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:81)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3208)
-	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(EmbedConnection.java:1315)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:445)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.jdbc.EmbeddedDriver.connect(EmbeddedDriver.java:125)
-	at org.apache.derby.impl.drda.Database.makeConnection(Database.java:253)
-	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(DRDAConnThread.java:1474)
-	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(DRDAConnThread.java:1424)
-	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(DRDAConnThread.java:3378)
-	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(DRDAConnThread.java:1208)
-	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(DRDAConnThread.java:1008)
-	at org.apache.derby.impl.drda.DRDAConnThread.run(DRDAConnThread.java:298)
-Caused by: ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	... 17 more
-============= begin nested exception, level (1) ===========
-ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3208)
-	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(EmbedConnection.java:1315)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:445)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.jdbc.EmbeddedDriver.connect(EmbeddedDriver.java:125)
-	at org.apache.derby.impl.drda.Database.makeConnection(Database.java:253)
-	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(DRDAConnThread.java:1474)
-	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(DRDAConnThread.java:1424)
-	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(DRDAConnThread.java:3378)
-	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(DRDAConnThread.java:1208)
-	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(DRDAConnThread.java:1008)
-	at org.apache.derby.impl.drda.DRDAConnThread.run(DRDAConnThread.java:298)
-============= end nested exception, level (1) ===========
-Cleanup action completed
-Wed Nov 12 20:00:11 SAST 2025 Thread[#29,DRDAConnThread_2,5,main] (DATABASE = HospitalManagementSystem), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
 ----------------------------------------------------------------
-Wed Nov 12 21:02:25 SAST 2025: Shutting down Derby engine
+Thu Dec 11 20:20:55 SAST 2025: Shutting down Derby engine
